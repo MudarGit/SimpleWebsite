@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;  
 
 namespace SimpleWebsite.Controllers
 {
@@ -10,6 +11,8 @@ namespace SimpleWebsite.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Location = ConfigurationManager.AppSettings["location"];
+            
             return View();
         }
 
